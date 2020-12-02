@@ -1,0 +1,125 @@
+*{
+  outline: none;
+  box-sizing: border-box;
+}
+
+body{
+  background: #607d8b;
+}
+
+.container-slider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slick-track{
+  will-change: transform;
+}
+
+.slick-list{
+  overflow: visible;
+  will-change: transform;
+}
+
+.slick-slide{
+  padding: 0 100px;
+  width: 100vw;
+  filter: drop-shadow(0px 10px 40px rgba(0, 0, 0, 0.55));
+}
+
+.slick-slide img{
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+ [type="button"]{
+  position: fixed;
+  top: 50%;
+  z-index: 10;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border: 0;
+  text-indent: -9999px;
+  background: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
+}
+
+[type="button"]:hover{
+  opacity: 1;
+}
+
+[type="button"].slick-next{
+  right: 0;
+  border-image: url(rightarrow.PNG);
+}
+
+[type="button"].slick-next:hover{
+  right: -5px;
+}
+
+[type="button"].slick-prev{
+  left: 0;
+  border-image: url(leftarrow.PNG);
+}
+
+[type="button"].slick-prev:hover{
+  left: -5px;
+}
+
+@keyframes motion-blur {
+  0%{
+    filter: url(#blur0);
+    transform: scale(1,1);
+  }
+  15%{
+    filter: url(#blur1);
+    transform: scale(1,0.98);
+  }
+  30%{
+    filter: url(#blur2);
+    transform: scale(1,0.93);
+  }
+  45%{
+    filter: url(#blur3);
+    transform: scale(1,1, 0.9);
+  }
+  60%{
+    filter: url(#blur4);
+    transform: scale(1,2, 0.88);
+  }
+  75%, 100%{
+    filter: url(#blur5);
+    transform: scale(1.35, 0.85);
+  }
+}
+
+.do-transition{
+  animation: motion-blur 0.1s linear forwards, motion-blur 0.4s linear reverse forwards 0.1s;
+}
+
+.contenedor-iconos2 .izquierdo{
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  top: 49%;
+  left: 20px;
+  z-index: 100;
+}
+
+.contenedor-iconos2 .derecha{
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  top: 49%;
+  right: 20px;
+  z-index: 100;
+}

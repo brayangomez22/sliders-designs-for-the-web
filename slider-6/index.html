@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Rotating Image Slider with jQuery & CSS3</title>
+		  
+        <style>
+ 
+body{
+	background-color: #f0f0f0;
+	color:#000;
+	 
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+ 
+.rm_wrapper{
+	width:1160px;
+	margin:0 auto;
+	position:relative;
+}
+.rm_container{
+	width:1050px;
+	overflow:hidden;
+	position:relative;
+	height:570px;
+	margin:0 auto;
+}
+ 
+.rm_container ul{
+	width:1170px;
+}
+.rm_container ul li{
+	float:left;
+	margin-left:-80px;
+	position:relative;
+	overflow:hidden;
+	width:310px;
+	height:465px;
+	border:30px solid #f0f0f0;
+	border-width:50px 30px 0px 30px;
+	background-color:#f0f0f0;
+}
+.rm_container ul li img{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.rm_mask_right, .rm_mask_left{
+	position: absolute;
+	height: 110px;
+	background: #f0f0f0;
+	width: 530px;
+	bottom: -30px;
+	left: 0px;
+	-moz-transform:rotate(-3deg);
+	-webkit-transform:rotate(-3deg);
+	transform:rotate(-3deg);
+}
+.rm_mask_right{
+	left:auto;
+	right:0px;
+	-moz-transform:rotate(3deg);
+	-webkit-transform:rotate(3deg);
+	transform:rotate(3deg);
+}
+.rm_corner_right, .rm_corner_left{
+	background: #f0f0f0;
+	position:absolute;
+	width:200px;
+	height:100px;
+	bottom:0px;
+	left:-65px;
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+.rm_corner_right{
+	left:auto;
+	right:-65px;
+	-moz-transform:rotate(-45deg);
+	-webkit-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+}
+.rm_nav a{
+	position:absolute;
+	top:200px;
+	width:38px;
+	height:87px;
+	cursor:pointer;
+	opacity:0.7;
+}
+.rm_nav a:hover{
+	opacity:1.0;
+}
+.rm_nav a.rm_next{
+	background:transparent url(images/next.png) no-repeat top left;
+	right:0px;
+}
+.rm_nav a.rm_prev{
+	background:transparent url(images/prev.png) no-repeat top left;
+	left:0px;
+}
+ 
+ 
+        </style>
+    </head>
+    <body>
+    <br><br><br><br><br>
+		<div class="content">
+			<div class="rm_wrapper">
+				<div id="rm_container" class="rm_container">
+					<ul>
+						<li data-images="rm_container_1" data-rotation="-15"><img src="images/1.jpg"/></li>
+						<li data-images="rm_container_2" data-rotation="-5"><img src="images/2.jpg"/></li>
+						<li data-images="rm_container_3" data-rotation="5"><img src="images/3.jpg"/></li>						
+						<li data-images="rm_container_4" data-rotation="15"><img src="images/4.jpg"/></li>
+					</ul>
+					
+					<div id="rm_mask_left" class="rm_mask_left"></div>
+					
+					<div id="rm_mask_right" class="rm_mask_right"></div>
+					
+					<div id="rm_corner_left" class="rm_corner_left"></div>
+					
+					<div id="rm_corner_right" class="rm_corner_right"></div>
+			 
+					<div style="display:none;">
+						<div id="rm_container_1">
+							<img src="images/1.jpg"/>
+							<img src="images/5.jpg"/>
+							<img src="images/6.jpg"/>
+							<img src="images/7.jpg"/>
+						</div>
+						<div id="rm_container_2">
+							<img src="images/2.jpg"/>
+							<img src="images/8.jpg"/>
+							<img src="images/9.jpg"/>
+							<img src="images/10.jpg"/>
+						</div>
+						<div id="rm_container_3">
+							<img src="images/3.jpg"/>
+							<img src="images/11.jpg"/>
+							<img src="images/12.jpg"/>
+							<img src="images/13.jpg"/>
+						</div>
+						<div id="rm_container_4">
+							<img src="images/4.jpg"/>
+							<img src="images/14.jpg"/>
+							<img src="images/15.jpg"/>
+							<img src="images/16.jpg"/>
+						</div>
+					</div>
+				</div>
+				<div class="rm_nav">
+					<a id="rm_next" href="#" class="rm_next"></a>
+					<a id="rm_prev" href="#" class="rm_prev"></a>
+				</div>
+				 
+			</div>
+		</div>
+		 
+		
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		
+		<script type="text/javascript" src="js/jquery.transform-0.9.3.min_.js"></script>
+		 
+		<script type="text/javascript" src="js/jquery.RotateImageMenu.js"></script>
+    </body>
+</html>
